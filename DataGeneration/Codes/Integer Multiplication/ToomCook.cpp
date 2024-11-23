@@ -4,6 +4,11 @@ using namespace std;
 using namespace std::chrono;
 #define DMAX 59049
 
+/********************************************************************************************
+ *   Multiplication of Big Integers Using the Toom Cook (TOOM3) Multiplication Algorithm    *
+ *                                    Created by QandAI                                     *
+ *******************************************************************************************/
+
 int MAX = 27;
 
 int D;
