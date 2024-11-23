@@ -1,8 +1,9 @@
 Exploring Novel Methods of Quantum Error Correction (QEC)
 Through the Implementation and Application of Traditional Error Correction
 
-Aiden Oh, Joy Kim, Yulhee Han
-Supervised by Gangjoo Robin Nam and Taemin An
+Aiden Oh, Joy Kim, Yulhee Han <br />
+Supervised by Gangjoo Robin Nam and Taemin An <br />
 Quantum computers, especially in the current Digital Age, are anticipated to have a myriad of applications if used properly among enterprises and governments. Consequently, various endeavors are being made in major branches of quantum computers: superconducting computers by IBM, and ion-trapping computers led by IonQ. However, Quantum Errors remain a major problem in practically using quantum computers outside of large enterprises or governments, as the computers are not yet fully immune to “noisy environments” comprised of electromagnetic and particle disturbances. As a result, physicists have consistently devised efficient methods to use logical redundancy qubits to make the computer fault-tolerant and able to detect and fix its errors. While this method, known as Quantum Error Correction (QEC) stands to be the most feasible solution to quantum computer errors, the severe challenge in scaling up the number of qubits in a quantum computer is significantly hampering the full development of large-scale quantum computers able to do QEC. The paper questions the applicability of traditional computational error correction codes such as Hamming Codes or Reed-Solomon Codes, as a concept and/or fully as in practice, as a novel method to make QEC possible without the use of redundancy logical qubits. The study compared the performance, accuracy, and efficiency of devised and conventional algorithms by executing integer multiplication and prime factorization of integers. The results show that ___. 
+<br />
  
 ![image](https://github.com/user-attachments/assets/3cb1ea14-4ad9-4f8e-95bc-d1fd57086c54)
