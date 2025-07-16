@@ -18,8 +18,8 @@ using namespace std;
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm5 *Form5;
-int NoD, MaxL, MinL, LoN[10000], result, result2[100000], nx, errored[10000][1000], HowManyError[10000];//data ¼ö, ÃÖÀå ±æÀÌ, ÃÖ´Ü ±æÀÌ, °¢ ¼ö ±æÀÌ, Æ²¸° ºÎºĞ ÀÖ´ÂÁö È®ÀÎ, Çö x °ª
-String ReadyOut, input[10000]; //ÇØ¹Ö Àû¿ë °ª ÀúÀå, °¢ ¼ö
+int NoD, MaxL, MinL, LoN[10000], result, result2[100000], nx, errored[10000][1000], HowManyError[10000];//data ìˆ˜, ìµœì¥ ê¸¸ì´, ìµœë‹¨ ê¸¸ì´, ê° ìˆ˜ ê¸¸ì´, í‹€ë¦° ë¶€ë¶„ ìˆëŠ”ì§€ í™•ì¸, í˜„ x ê°’
+String ReadyOut, input[10000]; //í•´ë° ì ìš© ê°’ ì €ì¥, ê° ìˆ˜
 vector<int> Data[10000], Transmit[10000];
 
 
@@ -34,7 +34,7 @@ __fastcall TForm5::TForm5(TComponent* Owner)
 
 //---------------------------------------------------------------------------
 
-void Hamming(int x)  //Áö±İ ÁÖ¾îÁø ¼ö°¡ ¾Æ´Ï¶ó ¸Ç ¾Õ¿¡ 1 ºÙÀÌ°í ¸Ç µÚÀÇ ¼ö ¹ö¸° °ªÀ¸·Î °è»ê Áß
+void Hamming(int x)  //ì§€ê¸ˆ ì£¼ì–´ì§„ ìˆ˜ê°€ ì•„ë‹ˆë¼ ë§¨ ì•ì— 1 ë¶™ì´ê³  ë§¨ ë’¤ì˜ ìˆ˜ ë²„ë¦° ê°’ìœ¼ë¡œ ê³„ì‚° ì¤‘
 {
 	//ShowMessage(IntToStr(Data[x][0])+" "+IntToStr(Data[x][1])+IntToStr(Data[x][2])+IntToStr(Data[x][3]));
 	int k = LoN[x];
@@ -251,27 +251,27 @@ void __fastcall TForm5::Button4Click(TObject *Sender)
 
 
 void __fastcall TForm5::ListBox4DrawItem(TWinControl *Control, int Index, TRect &Rect,
-		  TOwnerDrawState State)   //¸¶Áö¸· ÁÙ Æ²¸° ±ÛÀÚ¸¸ »¡°£»ö
+		  TOwnerDrawState State)   //ë§ˆì§€ë§‰ ì¤„ í‹€ë¦° ê¸€ìë§Œ ë¹¨ê°„ìƒ‰
 {
 	String itemText = ListBox4->Items->Strings[Index];
 
-	// ¹è°æ ±×¸®±â
+	// ë°°ê²½ ê·¸ë¦¬ê¸°
 	ListBox4->Canvas->FillRect(Rect);
 
-	int xPos = Rect.Left + 2;  // x ÁÂÇ¥ ½ÃÀÛ À§Ä¡
-	int yPos = Rect.Top;  // y ÁÂÇ¥´Â µ¿ÀÏ
+	int xPos = Rect.Left + 2;  // x ì¢Œí‘œ ì‹œì‘ ìœ„ì¹˜
+	int yPos = Rect.Top;  // y ì¢Œí‘œëŠ” ë™ì¼
 
-	// ±ÛÀÚ¸¶´Ù ¹İº¹ÇÏ¸ç ±×¸®±â
+	// ê¸€ìë§ˆë‹¤ ë°˜ë³µí•˜ë©° ê·¸ë¦¬ê¸°
 	if(HowManyError[Index]>1)
 	{
 		for (int i = 1; i <= itemText.Length(); i++)
 		{
 			ListBox4->Canvas->Font->Color = clRed;
 
-			// ÇÑ ±ÛÀÚ¾¿ Ãâ·Â
+			// í•œ ê¸€ìì”© ì¶œë ¥
 			ListBox4->Canvas->TextOut(xPos, yPos, itemText.SubString(i, 1));
 
-			// ´ÙÀ½ ±ÛÀÚ À§Ä¡·Î ÀÌµ¿
+			// ë‹¤ìŒ ê¸€ì ìœ„ì¹˜ë¡œ ì´ë™
 			xPos += ListBox4->Canvas->TextWidth(itemText.SubString(i, 1));
 		}
 		return;
@@ -284,17 +284,17 @@ void __fastcall TForm5::ListBox4DrawItem(TWinControl *Control, int Index, TRect 
 		}
 		else
 		{
-			// ¼±ÅÃµÈ Ç×¸ñ°ú ±×·¸Áö ¾ÊÀº Ç×¸ñ¿¡ ´ëÇÑ Ã³¸®
+			// ì„ íƒëœ í•­ëª©ê³¼ ê·¸ë ‡ì§€ ì•Šì€ í•­ëª©ì— ëŒ€í•œ ì²˜ë¦¬
 			if (State.Contains(odSelected))
-				ListBox4->Canvas->Font->Color = clHighlightText;  // ¼±ÅÃµÈ ±ÛÀÚ »ö»ó
+				ListBox4->Canvas->Font->Color = clHighlightText;  // ì„ íƒëœ ê¸€ì ìƒ‰ìƒ
 			else
-				ListBox4->Canvas->Font->Color = clWindowText;     // ¼±ÅÃµÇÁö ¾ÊÀº ±ÛÀÚ »ö»ó
+				ListBox4->Canvas->Font->Color = clWindowText;     // ì„ íƒë˜ì§€ ì•Šì€ ê¸€ì ìƒ‰ìƒ
 		}
 
-		// ÇÑ ±ÛÀÚ¾¿ Ãâ·Â
+		// í•œ ê¸€ìì”© ì¶œë ¥
 		ListBox4->Canvas->TextOut(xPos, yPos, itemText.SubString(i, 1));
 
-		// ´ÙÀ½ ±ÛÀÚ À§Ä¡·Î ÀÌµ¿
+		// ë‹¤ìŒ ê¸€ì ìœ„ì¹˜ë¡œ ì´ë™
 		xPos += ListBox4->Canvas->TextWidth(itemText.SubString(i, 1));
    }
 
@@ -306,13 +306,13 @@ void __fastcall TForm5::ListBox3DrawItem(TWinControl *Control, int Index, TRect 
 {
 	String itemText = ListBox3->Items->Strings[Index];
 
-	// ¹è°æ ±×¸®±â
+	// ë°°ê²½ ê·¸ë¦¬ê¸°
 	ListBox3->Canvas->FillRect(Rect);
 
-	int xPos = Rect.Left + 2;  // x ÁÂÇ¥ ½ÃÀÛ À§Ä¡
-	int yPos = Rect.Top;  // y ÁÂÇ¥´Â µ¿ÀÏ
+	int xPos = Rect.Left + 2;  // x ì¢Œí‘œ ì‹œì‘ ìœ„ì¹˜
+	int yPos = Rect.Top;  // y ì¢Œí‘œëŠ” ë™ì¼
 
-	// ±ÛÀÚ¸¶´Ù ¹İº¹ÇÏ¸ç ±×¸®±â
+	// ê¸€ìë§ˆë‹¤ ë°˜ë³µí•˜ë©° ê·¸ë¦¬ê¸°
 	for (int i = 1; i <= itemText.Length(); i++)
 	{
 		if (errored[Index][i]==1)
@@ -321,17 +321,17 @@ void __fastcall TForm5::ListBox3DrawItem(TWinControl *Control, int Index, TRect 
 		}
 		else
 		{
-			// ¼±ÅÃµÈ Ç×¸ñ°ú ±×·¸Áö ¾ÊÀº Ç×¸ñ¿¡ ´ëÇÑ Ã³¸®
+			// ì„ íƒëœ í•­ëª©ê³¼ ê·¸ë ‡ì§€ ì•Šì€ í•­ëª©ì— ëŒ€í•œ ì²˜ë¦¬
 			if (State.Contains(odSelected))
-				ListBox3->Canvas->Font->Color = clHighlightText;  // ¼±ÅÃµÈ ±ÛÀÚ »ö»ó
+				ListBox3->Canvas->Font->Color = clHighlightText;  // ì„ íƒëœ ê¸€ì ìƒ‰ìƒ
 			else
-				ListBox3->Canvas->Font->Color = clWindowText;     // ¼±ÅÃµÇÁö ¾ÊÀº ±ÛÀÚ »ö»ó
+				ListBox3->Canvas->Font->Color = clWindowText;     // ì„ íƒë˜ì§€ ì•Šì€ ê¸€ì ìƒ‰ìƒ
 		}
 
-		// ÇÑ ±ÛÀÚ¾¿ Ãâ·Â
+		// í•œ ê¸€ìì”© ì¶œë ¥
 		ListBox3->Canvas->TextOut(xPos, yPos, itemText.SubString(i, 1));
 
-		// ´ÙÀ½ ±ÛÀÚ À§Ä¡·Î ÀÌµ¿
+		// ë‹¤ìŒ ê¸€ì ìœ„ì¹˜ë¡œ ì´ë™
 		xPos += ListBox3->Canvas->TextWidth(itemText.SubString(i, 1));
    }
 }
