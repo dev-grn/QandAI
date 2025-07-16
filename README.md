@@ -8,6 +8,10 @@
 ![Quantum Computing](https://img.shields.io/badge/Quantum_Computing-Theoretical_Research-6f42c1?style=for-the-badge&logo=quantconnect&logoColor=white)
 ![C++ Builder](https://img.shields.io/badge/C++Builder-Embarcadero-D31A00?style=for-the-badge&logo=embarcadero&logoColor=white)
 
+https://www.curieuxacademicjournal.com/_files/ugd/99711c_b9c94e709d8e431c8847be35f309df86.pdf 
+
+(Accessible at pg.403)
+
 ---
 
 ### Authors
