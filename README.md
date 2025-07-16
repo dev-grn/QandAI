@@ -1,12 +1,12 @@
-# Exploring Novel Methods of Quantum Error Correction (QEC)  
-### Through the Implementation and Application of Traditional Error Correction
+# Exploring Novel Methods of Quantum Error Correction (QEC) Through the Implementation and Application of Traditional Error Correction
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://www.python.org/)
-[![Qiskit](https://img.shields.io/badge/Qiskit-Quantum-yellow?logo=IBM)](https://qiskit.org/)
-[![C++](https://img.shields.io/badge/C++-17-blue?logo=c%2B%2B)](https://isocpp.org/)
-[![GMP](https://img.shields.io/badge/GNU%20GMP-Arbitrary%20Precision-green?logo=gnu)](https://gmplib.org/)
-[![Quantum Computing](https://img.shields.io/badge/Quantum_Computing-Theoretical_Research-purple?logo=quantconnect)]()
-[![C++ Builder](https://img.shields.io/badge/C++Builder-Embarcadero-red?logo=embarcadero)](https://www.embarcadero.com/products/cbuilder)
+
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Qiskit](https://img.shields.io/badge/Qiskit-Quantum-FF6F00?style=for-the-badge&logo=ibm&logoColor=white)
+![C++](https://img.shields.io/badge/C++-17-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![GMP](https://img.shields.io/badge/GNU_GMP-Arbitrary_Precision-8A1538?style=for-the-badge&logo=gnu&logoColor=white)
+![Quantum Computing](https://img.shields.io/badge/Quantum_Computing-Theoretical_Research-6f42c1?style=for-the-badge&logo=quantconnect&logoColor=white)
+![C++ Builder](https://img.shields.io/badge/C++Builder-Embarcadero-D31A00?style=for-the-badge&logo=embarcadero&logoColor=white)
 
 ---
 
